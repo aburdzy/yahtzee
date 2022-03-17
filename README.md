@@ -2,6 +2,8 @@
 
 Is is a popular game in which a player throw 5 dices. The target of this game is to get the best arrangement of rolled dices for which he receives points.
 
+This game was created in React.js.
+
 ## Screenshots
 
 ![Editing yahtzee_README md at master · aburdzy_yahtzee - Google Chrome 17 03 2022 16_56_46](https://user-images.githubusercontent.com/80163377/158841635-e610dbdd-5e96-47ee-915d-55c93c3f7286.png)
