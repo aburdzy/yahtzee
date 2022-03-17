@@ -223,7 +223,7 @@ td.uncompleted {
 
 tr.uncompleted:hover {
   cursor: pointer;
-  background-color: rgba(43, 214, 0, 0.651);
+  background-color: rgba(225, 225, 225, 0.65);
 }
 
 @media only screen and (max-width: 900px) {
