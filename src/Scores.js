@@ -5,8 +5,8 @@ export let scoresValue = new Map([
   ['fours', '-'],
   ['fives', '-'],
   ['sixes', '-'],
-  ['bonus', '-'],
-  ['total', '-'],
+  ['bonus', 0],
+  ['total', 0],
   ['3 of kind', '-'],
   ['4 of kind', '-'],
   ['full house', '-'],
@@ -14,7 +14,7 @@ export let scoresValue = new Map([
   ['large straight', '-'],
   ['yahtzee', '-'],
   ['chance', '-'],
-  ['grand total', '-'],
+  ['grand total', 0],
 ]);
 
 export let tmpScoresValue = new Map([
