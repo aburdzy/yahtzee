@@ -1,38 +1,257 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.App, #root, body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  font-family: Verdana, Tahoma, sans-serif;
+}
+
+.App, #root {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+}
+
+.board {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 670px;
+  background-color: rgb(55, 139, 41);
+  border-radius: 4px;
+}
+
+.table-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.dices {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dice-container {
+  cursor: pointer;
+  margin: 0 10px;
+  border-radius: 16px;
+}
+
+.dice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 70px;
+  max-height: 70px;
+  width: 5vw;
+  height: 5vw;
+  border: 4px solid black;
+  border-radius: 6px;
+  background-color: white;
+  padding: 10px;
+}
+
+.row {
+  display: flex;
+  margin: 2px;
+}
+
+.dot {
+  max-width: 20px;
+  max-height: 20px;
+  width: 2vw;
+  height: 2vw;
+  border-radius: 100%;
+  background-color: black;
+}
+
+.one .row:first-child, 
+.one .row:last-child, 
+.one .row:nth-child(2) .dot:not(:nth-child(2))  {
+  opacity: 0;
+}
+
+.two .row:nth-child(2),
+.two .row:first-child .dot:not(:nth-child(1)),
+.two .row:last-child .dot:not(:nth-child(3)) {
+  opacity: 0;
+}
+
+.three .row:first-child .dot:not(:nth-child(1)),
+.three .row:nth-child(2) .dot:not(:nth-child(2)),
+.three .row:last-child .dot:not(:nth-child(3)) {
+  opacity: 0;
+}
+
+.four .row:first-child .dot:nth-child(2),
+.four .row:nth-child(2),
+.four .row:last-child .dot:nth-child(2) {
+  opacity: 0;
+}
+
+.five .row:first-child .dot:nth-child(2),
+.five .row:nth-child(2) .dot:not(:nth-child(2)),
+.five .row:last-child .dot:nth-child(2) {
+  opacity: 0;
+}
+
+.six .row:first-child .dot:nth-child(2),
+.six .row:nth-child(2) .dot:nth-child(2),
+.six .row:last-child .dot:nth-child(2) {
+  opacity: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-radius: 4px;
+}
+
+table tbody td {
+  padding: 12px 22px;
+}
+
+table tbody td:first-child {
+  min-width: 200px;
+}
+
+table tbody td:last-child {
+  min-width: 50px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+table tbody tr {
+  border-bottom: 1px solid rgb(209, 209, 209);
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+table tbody tr:nth-child(2n - 1) {
+  background-color: white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+table tbody tr.accent1 {
+  border-top: 2px solid rgb(31, 177, 68);
+  border-bottom: 2px solid rgb(31, 177, 68);
+}
+
+table tbody tr.accent2 {
+  background-color: rgb(31, 177, 68);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+h2 {
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.throw {
+  background-color: white;
+  color: rgb(31, 177, 68);
+  border-radius: 4px;
+  border: none;
+  height: 50px;
+  width: 120px;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+  background-image: url('./images/dices.svg');
+  background-repeat: no-repeat;
+  background-position: 90% 46%;
+  background-size: 1.3em;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.throw.disabled {
+  background-color: rgb(211, 211, 211);
+}
+
+.rounds {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background-color: white;
+  margin: 0 10px;
+  background-size: 30px;
+  background-position: center;
+}
+
+.circle:first-child {
+  background-image: url('./images/dice-1-svgrepo-com.svg');
+}
+
+.circle:nth-child(2) {
+  background-image: url('./images/dice-2-svgrepo-com.svg');
+}
+
+.circle:last-child {
+  background-image: url('./images/dice-3-svgrepo-com.svg');
+}
+
+td.completed {
+  color: black;
+}
+
+td.uncompleted {
+  color: rgb(155, 155, 155);
+}
+
+tr.uncompleted:hover {
+  cursor: pointer;
+  background-color: rgba(43, 214, 0, 0.651);
+}
+
+@media only screen and (max-width: 900px) {
+  .container {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .board {
+    max-width: none;
+    padding: 20px 0;
+    width: 100%;
+    background-color: none;
+    border-radius: 0;
+  }
+
+  .table-container {
+    width: 100%;
+    max-width: none;
+    margin-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  body {
+    display: initial;
+  }
+
+  .dice-container {
+    margin: 0 4px;
   }
 }
+

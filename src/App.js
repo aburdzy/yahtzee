@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import Board from './components/Board';
+import ScoreTable from './components/ScoreTable';
+import { useState } from 'react';
+import { AppContext, defaultValue } from './AppContext';
+import { scoresValue, tmpScoresValue } from './Scores';
 
 function App() {
+  const [dices, setDices] = useState(defaultValue);
+  const [scores, setScores] = useState(scoresValue);
+  const [tmpScores, setTmpScores] = useState(tmpScoresValue);
+  const [isThrown, setIsThrown] = useState(false);
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppContext.Provider value={{ dices, setDices, scores, setScores, tmpScores, setTmpScores, isThrown, setIsThrown }}>
+        <div className='container'>
+          <Board />
+          <ScoreTable />
+        </div>
+     </AppContext.Provider>
     </div>
   );
 }
