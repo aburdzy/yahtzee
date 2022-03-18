@@ -11,7 +11,7 @@ function Modal(props) {
         </div>
         <h3 className={'header'}>Do you want to play again?</h3>            
         <div className='content'>
-          <button className='reset' onClick={() => props.resetGame()}>RESET</button>
+          <button className='reset' onClick={() => props.resetGame()}>YES</button>
         </div> 
       </div>
     </div>
