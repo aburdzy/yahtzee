@@ -3,9 +3,11 @@ import Dice from './Dice';
 import { AppContext } from '../AppContext';
 import { sumScore, meshesScore, yahtzeeScore, smallStraightScore, largeStraightScore, 
   fullHouseScore, threeOfKindScore, fourOfKindScore } from '../CheckScore';
+import { scoresValue, tmpScoresValue } from '../Scores';
+import Modal from './Modal';
 
 function Board() {
-  const { dices, setDices, tmpScores, scores, setTmpScores, isThrown, setIsThrown } = useContext(AppContext);
+  const { dices, setDices, tmpScores, scores, setScores, setTmpScores, isThrown, setIsThrown } = useContext(AppContext);
   const types = new Map([
     [1, 'one'],
     [2, 'two'],
@@ -16,6 +18,7 @@ function Board() {
   ]);
 
   const [round, setRound] = useState(0);
+  const [isModalVisible, setIsModalVisible] = useState(false);
   
   function throwDices() {
     setRound(round + 1);
@@ -70,9 +73,27 @@ function Board() {
     setDices(newDices);
   }
 
+  function resetGame() {
+    setTmpScores(tmpScoresValue);
+    setScores(scoresValue);
+    setIsModalVisible(false);
+  }
+
   useEffect(() => {
     if(!isThrown) {
       setRound(0);
+
+      let counter = 0;
+
+      for (let value of scores.values()){
+        if(!isNaN(value)) {
+          counter++;
+        }
+      }
+
+      if(counter === scores.size) {
+        setIsModalVisible(true);
+      }
     }
   }, [isThrown]);
 
@@ -92,6 +113,7 @@ function Board() {
       </div>
     <button className={round === 3 ? `throw disabled` : 'throw'} onClick={throwDices} 
       disabled={round === 3 ? true : false}>ROLL</button>
+    <Modal isVisible={isModalVisible} onClose={() => setIsModalVisible(false)} resetGame={resetGame}/>
   </div>
   );
 }

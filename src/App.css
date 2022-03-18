@@ -255,3 +255,71 @@ tr.uncompleted:hover {
   }
 }
 
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.modal-container {
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  top:  0;
+  left:  0;
+  transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+  display: flex;
+  width: initial;
+  height: initial;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 4px;
+}
+
+.close-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.close-modal {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: center;
+  cursor: pointer;
+  background-image: url('./images/close-rectangle-svgrepo-com.svg');
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+
+.content {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.reset {
+  height: 40px;
+  width: 120px;
+  font-size: 1.2em;
+  background-color: rgb(95, 168, 82);;
+  border-radius: 4px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
