@@ -78,7 +78,6 @@ export const fullHouseScore = (dices) => {
         let three = values.filter(value => threes[i].includes(value));
 
         if(three.length === 3 && three[0] !== pair[0]) {
-          console.log(three, pair);
           
           score = 25;
           return score;
@@ -164,7 +163,6 @@ export const grandTotalScore = (scoreValue) => {
   for (let [key, value] of scoreValue) {
     if(parseInt(value)) {
       if(includedKeys.includes(key)) {
-        console.log(key);
         sum += value;
       }
     }
