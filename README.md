@@ -4,7 +4,7 @@ Is is a popular game in which a player throw 5 dices. The target of this game is
 
 This game was created in React.js.
 
-Link to the app: https://623362e9a7bc040008e31f6d--amazing-dijkstra-d9a2f3.netlify.app/
+Link to the app: https://623461eb9cac480008c7b5ba--amazing-dijkstra-d9a2f3.netlify.app/
 
 ## Screenshots
 
