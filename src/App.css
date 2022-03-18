@@ -191,7 +191,7 @@ h2 {
   margin-bottom: 20px;
 }
 
-.circle {
+.dice-round {
   width: 30px;
   height: 30px;
   border-radius: 6px;
@@ -201,15 +201,15 @@ h2 {
   background-position: center;
 }
 
-.circle:first-child {
+.dice-round:first-child {
   background-image: url('./images/dice-1-svgrepo-com.svg');
 }
 
-.circle:nth-child(2) {
+.dice-round:nth-child(2) {
   background-image: url('./images/dice-2-svgrepo-com.svg');
 }
 
-.circle:last-child {
+.dice-round:last-child {
   background-image: url('./images/dice-3-svgrepo-com.svg');
 }
 

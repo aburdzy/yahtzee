@@ -100,9 +100,9 @@ function Board() {
   return (
     <div className='board'>
       <div className='rounds'>
-        <div className='circle' style={{ backgroundColor: round === 1 || round === 2 || round === 3 ? 'rgb(255, 147, 147)' : null}}></div>
-        <div className='circle' style={{ backgroundColor: round === 2 || round === 3 ? 'rgb(255, 147, 147)' : null}}></div>
-        <div className='circle' style={{ backgroundColor: round === 3 ? 'rgb(255, 147, 147)' : null}}></div>
+        <div className='dice-round' style={{ backgroundColor: round === 1 || round === 2 || round === 3 ? 'rgb(255, 147, 147)' : null}}></div>
+        <div className='dice-round' style={{ backgroundColor: round === 2 || round === 3 ? 'rgb(255, 147, 147)' : null}}></div>
+        <div className='dice-round' style={{ backgroundColor: round === 3 ? 'rgb(255, 147, 147)' : null}}></div>
       </div>
       <div className='dices'>
         {isThrown ? dices.map((dice) => {
